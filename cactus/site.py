@@ -279,6 +279,7 @@ class Site(object):
 		awsAccessKey = self.config.get('aws-access-key') or \
 			raw_input('Amazon access key (http://bit.ly/Agl7A9): ').strip()
 		awsSecretKey = getpassword('aws', awsAccessKey) or \
+			       self.config.get('aws-secret-key') or \
 			getpass._raw_input('Amazon secret access key (will be saved in keychain): ').strip()
 		
 		# Try to fetch the buckets with the given credentials
